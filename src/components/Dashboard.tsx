@@ -7,7 +7,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { 
   Plus, FileText, Trash2, LogOut, Search, 
-  MoreVertical, Grid, List as ListIcon, FolderOpen 
+  MoreVertical, List as ListIcon, FolderOpen 
 } from 'lucide-react';
 import { signOut } from 'firebase/auth';
 import '../styles/Dashboard.css';

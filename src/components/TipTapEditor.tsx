@@ -12,10 +12,8 @@ import {
 } from 'firebase/firestore';
 import { useParams, useNavigate } from 'react-router-dom';
 import { 
-  ArrowLeft, 
   Users,
   Clock,
-  Save,
   Bold,
   Italic,
   Underline as UnderlineIcon,
@@ -33,7 +31,7 @@ export const TipTapEditor = () => {
   const [isSaving, setIsSaving] = useState(false);
   const [lastSaved, setLastSaved] = useState<string>('');
   const [title, setTitle] = useState('Untitled Document');
-  const [sharedUsers, setSharedUsers] = useState<string[]>([]);
+  const [, setSharedUsers] = useState<string[]>([]);
   const [isEditingTitle, setIsEditingTitle] = useState(false);
   
   const saveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -105,7 +103,7 @@ export const TipTapEditor = () => {
       if (editor && !isLocalChange.current) {
         const remoteContent = data.content || '';
         if (remoteContent !== editor.getHTML()) {
-          editor.commands.setContent(remoteContent, false);
+          editor.commands.setContent(remoteContent);
         }
       }
       isLocalChange.current = false;
