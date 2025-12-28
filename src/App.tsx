@@ -6,7 +6,7 @@ import { AuthForm } from './components/AuthForm';
 import { Dashboard } from './components/Dashboard';
 import { TipTapEditor } from './components/TipTapEditor';
 import { ProtectedRoute } from './components/ProtectedRoute';
-import './styles/App.css';
+
 
 function App() {
   const [user, setUser] = useState(auth.currentUser);
